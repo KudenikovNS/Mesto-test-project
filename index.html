@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+  <meta charset='UTF-8'>
+  <link rel='stylesheet' href='./pages/index.css'>
+  <title>Место</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta name='description' content='Третий проект'>
+  <meta name='author' content='Никита Кудеников'>
+</head>
+<body class='page'>
+	<div class='page__container'>
+		<header class='header'>
+			<img class='header__logo hover' src='./images/logo.svg' alt='Логотип'>
+		</header>
+
+		<main class='content'>
+			<div class='profile'>
+				<img class='profile__avatar' src='./images/avatar.jpg' alt='Аватарка'>
+        <div class='profile__list'>
+        <div class='profile__info'>
+          <h1 class='profile__title'>Жак-Ив Кусто</h1>
+          <p class='profile__subtitle'>Исследователь океана</p>
+        </div>
+				  <button class='profile__button-edit hover' type='button' aria-label='Кнопка для редоктирования информации в профиле'></button>
+				</div>		
+				<button class='profile__button-add hover' type='button' aria-label='Кнопка для добавления контента'></button>
+			</div>
+			<div class='photo-grid'>
+				<div class='element'>
+				  <img class='element__photo' src='./images/kirill-pershin-1088404-unsplash2.jpg' alt='Карачаевск'>
+					<div class='element__info'>
+						<p class='element__subtitle'>Карачаевск</p>
+						<button class='element__button-like hover' type='button' aria-label='Кнопка для лайка'></button>
+					</div>
+				</div>
+				<div class='element'>
+				  <img class='element__photo' src='./images/Гора_Эльбрус.jpg' alt='Гора Эльбрус'>
+					<div class='element__info'>
+						<p class='element__subtitle'>Гора Эльбрус</p>
+						<button class='element__button-like hover' type='button' aria-label='Кнопка для лайка'></button>
+					</div>
+				</div>
+				<div class='element'>
+				  <img class='element__photo' src='./images/Домбай.jpg' alt='Домбай'>
+					<div class='element__info'>
+						<p class='element__subtitle'>Домбай</p>
+						<button class='element__button-like hover' type='button' aria-label='Кнопка для лайка'></button>
+					</div>
+				</div>
+				<div class='element'>
+					<img class='element__photo' src='./images/Гора_Эльбрус.jpg' alt='Гора Эльбрус'>
+					  <div class='element__info'>
+						  <p class='element__subtitle'>Гора Эльбрус</p>
+						  <button class='element__button-like hover' type='button' aria-label='Кнопка для лайка'></button>
+					  </div>
+				  </div>
+				<div class='element'>
+				  <img class='element__photo' src='./images/Домбай.jpg' alt='Домбай'>
+					<div class='element__info'>
+						<p class='element__subtitle'>Домбай</p>
+						<button class='element__button-like hover' type='button' aria-label='Кнопка для лайка'></button>
+					</div>
+				</div>
+				<div class='element'>
+				  <img class='element__photo' src='./images/kirill-pershin-1088404-unsplash2.jpg' alt='Карачаевск'>
+					<div class='element__info'>
+						<p class='element__subtitle'>Карачаево-Черкесия</p>
+						<button class='element__button-like hover' type='button' aria-label='Кнопка для лайка'></button>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+	<footer class='footer'>
+		<p class="footer__copyright">&copy; 2021. Кудеников Никита</p>
+	</footer>
+  <div class='popup'>
+    <div class='popup__container'>
+      <h2 class='popup__title'>Редактировать профиль</h2>
+      <form class='popup__form' action='#' name='form'>       
+        <fieldset class='popup__input-container'>
+          <input class='popup__input-name' type='text' placeholder='ФИО' name='name' value='Жак-Ив Кусто'>
+          <input class='popup__input-profession' type='text' placeholder='Профессия' name='profession' value='Исследователь океана'>
+        </fieldset>
+        <button class='popup__button-save hover' type='sumbit' aria-label='Кнопка для сохранения изменений'>Сохранить</button>
+				<button class='popup__button-close hover' type='button' aria-label='Кнопка для закрытия диалогового окна'></button>
+      </form>
+    </div>
+  </div>
+	<script src='./scripts/script.js'></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+.popup__form {
+    position: relative;
+    z-index: 3;
+    margin: 0;
+}
