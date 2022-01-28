@@ -1,15 +1,15 @@
 .page__container {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
-    .page__container {
-        max-width: 768px;
-    }
+  .page__container {
+    max-width: 768px;
+  }
 }
 
 @media screen and (max-width: 320px) {
-    .page__container {
-        max-width: 320px;
-    }
+  .page__container {
+    max-width: 320px;
+  }
 }
