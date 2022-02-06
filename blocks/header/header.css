@@ -1,19 +1,18 @@
 .header {
   display: flex;
   margin: 0 auto;
-  max-width: 880px;
-  opacity: 0.7;
+  max-width: 320px;
   border-bottom: 1px solid #545454;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .header {
-    max-width: 768px;
+    max-width: 700px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 1024px) {
   .header {
-    max-width: 320px;
+    max-width: 880px;
   }
 }

@@ -1,20 +1,14 @@
 .element__button-like {
-  min-width: 22px;
+  margin: 26px -16px 0 0;
+  width: 22px;
   height: 19px;
   background: transparent;
   background-image: url(../../../images/like.svg);
   border: none;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 26px -20px 0px 0px;
 }
 
 .element__button-like:active {
   background-image: url(../../../images/like_active.png);
-}
-
-@media screen and (max-width: 320px) {
-  .element__button-like {
-    margin-top: 25px;
-  }
 }

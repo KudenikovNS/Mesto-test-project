@@ -1,5 +1,5 @@
 .popup__input-name {
-  width: 358px;
+  width: 238px;
   font-size: 14px;
   line-height: 17px;
   font-family: "Inter";
@@ -11,8 +11,8 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .popup__input-name {
-    width: 238px;
+    width: 358px;
   }
 }

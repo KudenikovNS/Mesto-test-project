@@ -2,22 +2,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 358px;
+  width: 238px;
   height: 50px;
   background-color: #000;
-  margin: 56px auto 0px;
+  margin: 49px auto 25px;
   color: #fff;
-  font-size: 18px;
-  font-family: 'Inter';
+  font-size: 14px;
+  line-height: 17px;
+  font-family: "Inter";
   font-weight: normal;
   border: none;
 }
 
-@media screen and (max-width: 660px) {
-.popup__button-save {
-  width: 238px;
-  font-size: 14px;
-  line-height: 1.21;
-  margin: 49px auto 25px;
-}
+@media screen and (min-width: 768px) {
+  .popup__button-save {
+    width: 358px;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 56px auto 0;
+  }
 }
