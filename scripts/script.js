@@ -137,4 +137,4 @@ function handleCardPhotoFormSubmit(evt) {
   closePopup(popupCardPhoto);
 }
 
-formPopupCardPhoto.addEventListener("click", handleCardPhotoFormSubmit);
+formPopupCardPhoto.addEventListener("submit", handleCardPhotoFormSubmit);
