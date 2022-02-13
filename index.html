@@ -42,104 +42,35 @@
             aria-label="Кнопка для добавления контента"
           ></button>
         </div>
-        <section class="photo-grid">
-          <article class="element">
-            <img
-              class="element__photo"
-              src="./images/kirill-pershin-1088404-unsplash2.jpg"
-              alt="Карачаевск"
-            />
-            <div class="element__info">
-              <p class="element__subtitle">Карачаевск</p>
-              <button
-                class="element__button-like hover"
-                type="button"
-                aria-label="Кнопка для лайка"
-              ></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__photo"
-              src="./images/Гора_Эльбрус.jpg"
-              alt="Гора Эльбрус"
-            />
-            <div class="element__info">
-              <p class="element__subtitle">Гора Эльбрус</p>
-              <button
-                class="element__button-like hover"
-                type="button"
-                aria-label="Кнопка для лайка"
-              ></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__photo"
-              src="./images/Домбай.jpg"
-              alt="Домбай"
-            />
-            <div class="element__info">
-              <p class="element__subtitle">Домбай</p>
-              <button
-                class="element__button-like hover"
-                type="button"
-                aria-label="Кнопка для лайка"
-              ></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__photo"
-              src="./images/Гора_Эльбрус.jpg"
-              alt="Гора Эльбрус"
-            />
-            <div class="element__info">
-              <p class="element__subtitle">Гора Эльбрус</p>
-              <button
-                class="element__button-like hover"
-                type="button"
-                aria-label="Кнопка для лайка"
-              ></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__photo"
-              src="./images/Домбай.jpg"
-              alt="Домбай"
-            />
-            <div class="element__info">
-              <p class="element__subtitle">Домбай</p>
-              <button
-                class="element__button-like hover"
-                type="button"
-                aria-label="Кнопка для лайка"
-              ></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__photo"
-              src="./images/kirill-pershin-1088404-unsplash2.jpg"
-              alt="Карачаевск"
-            />
-            <div class="element__info">
-              <p class="element__subtitle">Карачаево-Черкесия</p>
-              <button
-                class="element__button-like hover"
-                type="button"
-                aria-label="Кнопка для лайка"
-              ></button>
-            </div>
-          </article>
-        </section>
+        <section class="photo-grid"></section>
       </main>
     </div>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2021. Кудеников Никита</p>
     </footer>
-    <section class="popup">
+
+    <!-- Блок для картинок -->
+    <template class="template">
+      <article class="element">
+        <button
+          class="element__botton-delete hover"
+          type="button"
+          aria-label="Кнопка для удаления контента"
+        ></button>
+        <img class="element__photo" src="#" alt="#" />
+        <div class="element__info">
+          <p class="element__subtitle"></p>
+          <button
+            class="element__button-like hover"
+            type="button"
+            aria-label="Кнопка для лайка"
+          ></button>
+        </div>
+      </article>
+    </template>
+
+    <!-- Popup - открытие редактирования профиля -->
+    <section class="popup popup_profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" action="#" name="form">
@@ -174,6 +105,57 @@
         </form>
       </div>
     </section>
+
+    <!-- Popup для создания карточки с фотографией-->
+    <section class="popup popup_card-photo">
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" action="#" name="form-card">
+          <fieldset class="popup__input-container">
+            <input
+              class="popup__input-name"
+              type="text"
+              placeholder="Название"
+              name="name"
+              value="Название"
+            />
+            <input
+              class="popup__input-profession"
+              type="text"
+              placeholder="Профессия"
+              name="profession"
+              value="Ссылка на картинку"
+            />
+          </fieldset>
+          <button
+            class="popup__button-save hover"
+            type="submit"
+            aria-label="Кнопка для создания изменений"
+          >
+            Создать
+          </button>
+          <button
+            class="popup__button-close hover"
+            type="button"
+            aria-label="Кнопка для закрытия диалогового окна"
+          ></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Popup для увеличения фотографий при нажатии-->
+    <section class="popup popup_size-photo">
+      <div class="popup__container-size">
+        <img class="popup__photo" src="#" alt="Картинка" />
+        <p class="popup__photo-name"></p>
+        <button
+          class="popup__button-close hover"
+          type="button"
+          aria-label="Кнопка для закрытия диалогового окна"
+        ></button>
+      </div>
+    </section>
+
     <script src="./scripts/script.js"></script>
   </body>
 </html>
