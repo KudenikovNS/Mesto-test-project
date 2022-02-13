@@ -137,4 +137,4 @@ function handleCardPhotoFormSubmit(evt) {
   closePopup(popupCardPhoto);
 }
 
-formPopupCardPhoto.addEventListener("sumbit", handleCardPhotoFormSubmit);
+formPopupCardPhoto.addEventListener("click", handleCardPhotoFormSubmit);
