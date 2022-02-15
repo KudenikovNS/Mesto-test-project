@@ -4,7 +4,7 @@
   height: 20px;
   z-index: 4;
   right: 0;
-  top: -159px;
+  top: -60px;
   background-image: url(../../../images/320_Close_Popup.png);
   background-color: rgba(0, 0, 0, 0);
   border: none;
@@ -16,6 +16,5 @@
     width: 32px;
     height: 32px;
     right: -39px;
-    top: -151px;
   }
 }

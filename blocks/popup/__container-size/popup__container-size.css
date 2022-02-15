@@ -1,9 +1,7 @@
 .popup__container-size {
   display: flex;
   flex-direction: column;
-  z-index: -1;
   color: white;
   position: relative;
   border-radius: 10px;
-  height: 450px;
 }

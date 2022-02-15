@@ -16,9 +16,9 @@ const closePopupButtonCardPhoto = popupCardPhoto.querySelector(
 );
 const formPopupCardPhoto = popupCardPhoto.querySelector(".popup__form");
 
-const popupContainer = document.querySelector(".popup__container");
-const nameInput = popupContainer.querySelector(".popup__input-name");
-const subnameInput = popupContainer.querySelector(".popup__input-profession");
+const popupFormProfile = popupProfile.querySelector(".popup__form-profile");
+const nameInput = popupFormProfile.querySelector(".popup__input-name");
+const subnameInput = popupFormProfile.querySelector(".popup__input-profession");
 
 const nameInputProfile = document.querySelector(".profile__title");
 const subnameInputProfile = document.querySelector(".profile__subtitle");
@@ -32,33 +32,6 @@ const closePopupButtonSizePhoto = popupSizePhoto.querySelector(
 
 const elements = document.querySelector(".photo-grid");
 const template = document.querySelector(".template").content;
-
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
@@ -93,7 +66,7 @@ function handleProfileFormSubmit(evt) {
   closePopup(popupProfile);
 }
 
-popupContainer.addEventListener("submit", handleProfileFormSubmit);
+popupFormProfile.addEventListener("submit", handleProfileFormSubmit);
 
 function createCardPhoto(name, link) {
   const cardPhoto = template.querySelector(".element").cloneNode(true);
@@ -135,6 +108,7 @@ function handleCardPhotoFormSubmit(evt) {
     createCardPhoto(nameInputCardPhoto.value, subnameInputCardPhoto.value)
   );
   closePopup(popupCardPhoto);
+  formPopupCardPhoto.reset();
 }
 
 formPopupCardPhoto.addEventListener("submit", handleCardPhotoFormSubmit);
