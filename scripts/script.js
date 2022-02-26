@@ -1,3 +1,4 @@
+const popups = document.querySelectorAll(".popup");
 const openPopupButtonProfile = document.querySelector(".profile__button-edit");
 const openPopupButtonCadrAdd = document.querySelector(".profile__button-add");
 
@@ -15,6 +16,7 @@ const closePopupButtonCardPhoto = popupCardPhoto.querySelector(
   ".popup__button-close"
 );
 const formPopupCardPhoto = popupCardPhoto.querySelector(".popup__form");
+const sumbitButtonSave = popupCardPhoto.querySelector(".popup__button-save");
 
 const popupFormProfile = popupProfile.querySelector(".popup__form-profile");
 const nameInput = popupFormProfile.querySelector(".popup__input-name");
@@ -33,15 +35,37 @@ const closePopupButtonSizePhoto = popupSizePhoto.querySelector(
 const elements = document.querySelector(".photo-grid");
 const template = document.querySelector(".template").content;
 
+
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", closeEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closeEsc);
 }
 
+function closeEsc(evt) {
+  if (evt.key === "Escape") {
+    const popupOpen = document.querySelector(".popup_opened");
+    closePopup(popupOpen);
+  }
+}
+
+popups.forEach((popup) => {
+  popup.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("popup_opened")) {
+      closePopup(popup);
+    }
+    if (evt.target.classList.contains("popup__close-button")) {
+      closePopup(popup);
+    }
+  });
+});
+
 openPopupButtonProfile.addEventListener("click", function () {
+  //resetValidation(inputsCard, submitCard, formCard, validationConfig);
   openPopup(popupProfile);
   nameInput.value = nameInputProfile.textContent;
   subnameInput.value = subnameInputProfile.textContent;
@@ -52,6 +76,7 @@ closePopupButtonProfile.addEventListener("click", function () {
 });
 
 openPopupButtonCadrAdd.addEventListener("click", function () {
+  //resetValidation(inputsCard, submitCard, formCard, validationConfig);
   openPopup(popupCardPhoto);
 });
 
@@ -109,6 +134,8 @@ function handleCardPhotoFormSubmit(evt) {
   );
   closePopup(popupCardPhoto);
   formPopupCardPhoto.reset();
+  sumbitButtonSave.setAttribute("disabled", "");
+  sumbitButtonSave.classList.add(validationConfig.inactiveButtonClass);
 }
 
 formPopupCardPhoto.addEventListener("submit", handleCardPhotoFormSubmit);

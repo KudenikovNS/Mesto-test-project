@@ -73,24 +73,32 @@
     <section class="popup popup_profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form popup__form-profile" action="#" name="form">
+        <form class="popup__form popup__form-profile" action="#" name="form" novalidate>
           <fieldset class="popup__input-container">
             <input
-              class="popup__input-name"
+              class="popup__input popup__input-name"
+              id="profile_name_input"
               type="text"
               placeholder="ФИО"
               name="name"
               value="Жак-Ив Кусто"
               required
+              minlength="2"
+              maxlength="40"
             />
+            <span class="popup__error-input profile_name_input-error"></span>
             <input
-              class="popup__input-profession"
+              class="popup__input popup__input-profession"
+              id="profile_subname_input"
               type="text"
               placeholder="Профессия"
               name="profession"
               value="Исследователь океана"
               required
+              minlength="2"
+              maxlength="200"
             />
+            <span class="popup__error-input profile_subname_input-error"></span>
           </fieldset>
           <button
             class="popup__button-save hover"
@@ -112,24 +120,30 @@
     <section class="popup popup_card-photo">
       <div class="popup__container">
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form" action="#" name="form-card">
+        <form class="popup__form" action="#" name="form-card" novalidate>
           <fieldset class="popup__input-container">
             <input
-              class="popup__input-name"
+              class="popup__input popup__input-name"
+              id="card_name_input"
               type="text"
               placeholder="Название"
               name="name"
               value=""
               required
+              minlength="2"
+              maxlength="30"
             />
+            <span class="popup__error-input card_name_input-error"></span>
             <input
-              class="popup__input-profession"
+              class="popup__input popup__input-profession"
+              id="card_subname_input"
               type="url"
               placeholder="Ссылка на картинку"
               name="link"
               value=""
               required
             />
+            <span class="popup__error-input card_subname_input-error"></span>
           </fieldset>
           <button
             class="popup__button-save hover"
@@ -162,5 +176,6 @@
 
     <script src="./scripts/initial-сards.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/valid.js"></script>
   </body>
 </html>

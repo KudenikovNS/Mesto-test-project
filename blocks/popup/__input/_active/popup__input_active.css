@@ -1,0 +1,12 @@
+.popup__input_active {
+  opacity: 1;
+  font-family: "Inter", "Arial", "Helvetica";
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #ff0000;
+  width: 358px;
+  height: 12px;
+  text-align: center;
+  margin-left: 36px;
+}
