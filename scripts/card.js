@@ -7,9 +7,9 @@ import {
 
 export class Card {
   constructor(text, image, templateCard) {
-    this.text = text;
-    this.image = image;
-    this.templateCard = templateCard;
+    this._text = text;
+    this._image = image;
+    this._templateCard = templateCard;
   }
 
   _getTemplate() {
@@ -21,17 +21,19 @@ export class Card {
   }
 
   renderCard() {
-    this.element = this._getTemplate();
-    this.elementImage = this.element.querySelector("element__photo");
-    this.elementText = this.element.querySelector("element__subtitle");
-    this.elementButtonLike = this.element.querySelector("element__button-like");
-    this.elementButtomDelete = this.element.querySelector(
-      "element__button-delete"
+    this._element = this._getTemplate();
+    this._elementImage = this._element.querySelector(".element__photo");
+    this._elementText = this._element.querySelector(".element__subtitle");
+    this._elementButtonLike = this._element.querySelector(
+      ".element__button-like"
+    );
+    this._elementButtomDelete = this._element.querySelector(
+      ".element__button-delete"
     );
     this._elementImage.src = this._image;
     this._elementText.textContent = this._text;
     this._elementImage.alt = this._text;
-    this.setEventListeners();
+    this._setEventListeners();
 
     return this._element;
   }
@@ -51,14 +53,14 @@ export class Card {
 
     openPopup(popupSizePhoto);
   }
-  _setEventListerners() {
+  _setEventListeners() {
     this._elementButtonLike.addEventListener("click", () => {
       this._cardLike();
     });
-    this.elementButtomDelete.addEventListener("click", () => {
+    this._elementButtomDelete.addEventListener("click", () => {
       this._deleteCard();
     });
-    this.elementImage.addEventListener("click", () => {
+    this._elementImage.addEventListener("click", () => {
       this._openPopupCard();
     });
   }

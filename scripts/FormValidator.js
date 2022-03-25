@@ -2,11 +2,11 @@ export class FormValidator {
   constructor(configuration, form) {
     this._form = form;
     this._configuration = configuration;
-    this._buttonElement = this._form.querrySelector(
-      "this._configuration.submitButtonSelector"
+    this._buttonElement = this._form.querySelector(
+      this._configuration.submitButtonSelector
     );
     this._inputList = Array.from(
-      this._form.querrySelectorAll(this._configuration.inputSelector)
+      this._form.querySelectorAll(this._configuration.inputSelector)
     );
   }
 
@@ -28,8 +28,16 @@ export class FormValidator {
     }
   }
 
+  _showInputError(inputElement, errorMessage) {
+    const errorElement = this.form.querySelector(`.${inputElement.id}-error`);
+    inputElement.classList.add(this._configuration.inputErrorClass);
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add(this._configuration.errorClass);
+  };
+
+
   _hideInputError(inputElement) {
-    const errorElement = this.form.querrySelector(`.${inputElement.id}-error`);
+    const errorElement = this.form.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove(this._configuration.inputErrorClass);
     errorElement.classList.remove(this._configuration.errorClass);
     errorElement.textContent = "";
@@ -37,20 +45,20 @@ export class FormValidator {
 
   toggleButtonState() {
     if (this._hasInvalidInput()) {
-      this.disableSubmitButton();
+      this._disableSubmitButton();
     } else {
-      this.enableSubmitButton();
+      this._enableSubmitButton();
     }
   }
 
   _disableSubmitButton() {
-    this._buttonElement.classList.add(this.__configuration.inactiveButtonClass);
+    this._buttonElement.classList.add(this._configuration.inactiveButtonClass);
     this._buttonElement.setAttribute("disabled", "");
   }
 
   _enableSubmitButton() {
     this._buttonElement.classList.remove(
-      this.__configuration.inactiveButtonClass
+      this._configuration.inactiveButtonClass
     );
     this._buttonElement.removeAttribute("disabled", "");
   }

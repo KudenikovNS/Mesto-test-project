@@ -109,7 +109,7 @@ openPopupButtonProfile.addEventListener("click", function () {
 });
 
 openPopupButtonCadrAdd.addEventListener("click", function () {
-  popupFormSubmitAdd.reset();
+  formPopupCardPhoto.reset();
   addCardValidator.toggleButtonState();
   openPopup(popupCardPhoto);
 });
@@ -144,13 +144,13 @@ const validationConfig = {
   errorClass: "popup__input_active",
 };
 
-const editProfileValidator = new FormValidator(validationConfig, popupEditForm);
+const editProfileValidator = new FormValidator(validationConfig, popupFormProfile);
 const addCardValidator = new FormValidator(
   validationConfig,
-  popupFormSubmitAdd
+  formPopupCardPhoto
 );
 
-editProfileValidator.enableValidation();
-addCardValidator.enableValidation();
+editProfileValidator._enableValidation();
+addCardValidator._enableValidation();
 
 export { namePhotoPopup, photoPopup, openPopup, popupSizePhoto };
