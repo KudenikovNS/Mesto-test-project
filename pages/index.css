@@ -22,7 +22,7 @@
 @import url(../blocks/element/__info/element__info.css);
 @import url(../blocks/element/__subtitle/element__subtitle.css);
 @import url(../blocks/element/__button-like/element__button-like.css);
-@import url(../blocks/element/__botton-delete/element__botton-delete.css);
+@import url(../blocks/element/__button-delete/element__button-delete.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
 @import url(../blocks/element/__button-like/_activ/element__button-like_activ.css);

@@ -53,7 +53,7 @@
     <template class="template">
       <article class="element">
         <button
-          class="element__botton-delete hover"
+          class="element__button-delete hover"
           type="button"
           aria-label="Кнопка для удаления контента"
         ></button>
@@ -73,7 +73,12 @@
     <section class="popup popup_profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form popup__form-profile" action="#" name="form" novalidate>
+        <form
+          class="popup__form popup__form-profile"
+          action="#"
+          name="form"
+          novalidate
+        >
           <fieldset class="popup__input-container">
             <input
               class="popup__input popup__input-name"
@@ -174,8 +179,6 @@
       </div>
     </section>
 
-    <script src="./scripts/initial-сards.js"></script>
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/valid.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
