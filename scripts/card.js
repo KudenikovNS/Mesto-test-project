@@ -43,7 +43,7 @@ export class Card {
   }
 
   _deleteCard() {
-    this.element.remove();
+    this._element.remove();
   }
 
   _openPopupCard() {
