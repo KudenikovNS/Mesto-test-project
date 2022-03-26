@@ -59,16 +59,24 @@ const initialCards = [
   },
 ];
 
+function createCardPhoto(text, image) {
+  const card = new Card(text, image, ".template");
+  const cardElement = card.renderCard();
+  return cardElement;
+}
+
+const addCardPhoto = (card) => {
+  elements.prepend(card);
+};
+
+initialCards.forEach((item) => {
+  const card = createCardPhoto(item.name, item.link);
+  addCardPhoto(card);
+});
+
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closeEsc);
-}
-
-function closeEsc(evt) {
-  if (evt.key === "Escape") {
-    const popupOpen = document.querySelector(".popup_opened");
-    closePopup(popupOpen);
-  }
 }
 
 function closePopup(popup) {
@@ -87,20 +95,12 @@ popups.forEach((popup) => {
   });
 });
 
-function createCardPhoto(text, image) {
-  const card = new Card(text, image, ".template");
-  const cardElement = card.renderCard();
-  return cardElement;
+function closeEsc(evt) {
+  if (evt.key === "Escape") {
+    const popupOpen = document.querySelector(".popup_opened");
+    closePopup(popupOpen);
+  }
 }
-
-const addCardPhoto = (card) => {
-  elements.prepend(card);
-};
-
-initialCards.forEach((item) => {
-  const card = createCardPhoto(item.name, item.link);
-  addCardPhoto(card);
-});
 
 openPopupButtonProfile.addEventListener("click", function () {
   openPopup(popupProfile);
@@ -144,7 +144,10 @@ const validationConfig = {
   errorClass: "popup__input_active",
 };
 
-const editProfileValidator = new FormValidator(validationConfig, popupFormProfile);
+const editProfileValidator = new FormValidator(
+  validationConfig,
+  popupFormProfile
+);
 const addCardValidator = new FormValidator(
   validationConfig,
   formPopupCardPhoto
