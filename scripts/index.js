@@ -1,19 +1,24 @@
+//Экспортируемые данные
 import { Card } from "./card.js";
 import { FormValidator } from "./FormValidator.js";
 
+//Элементы профиля
 const elements = document.querySelector(".photo-grid");
 const openPopupButtonProfile = document.querySelector(".profile__button-edit");
 const openPopupButtonCadrAdd = document.querySelector(".profile__button-add");
 const nameInputProfile = document.querySelector(".profile__title");
 const subnameInputProfile = document.querySelector(".profile__subtitle");
 
+//Попапы
 const popups = document.querySelectorAll(".popup");
 
+//Элементы попапа профиля
 const popupProfile = document.querySelector(".popup_profile");
 const popupFormProfile = popupProfile.querySelector(".popup__form");
 const nameInput = popupFormProfile.querySelector(".popup__input-name");
 const subnameInput = popupFormProfile.querySelector(".popup__input-profession");
 
+//Элементы попапа добавления новой карточки
 const popupCardPhoto = document.querySelector(".popup_card-photo");
 const nameInputCardPhoto = popupCardPhoto.querySelector(".popup__input-name");
 const subnameInputCardPhoto = popupCardPhoto.querySelector(
@@ -25,6 +30,7 @@ const closePopupButtonCardPhoto = popupCardPhoto.querySelector(
 );
 const submitButtonSave = popupCardPhoto.querySelector(".popup__button-save");
 
+//Элементы попапа изображений
 const popupSizePhoto = document.querySelector(".popup_size-photo");
 const photoPopup = popupSizePhoto.querySelector(".popup__photo");
 const namePhotoPopup = popupSizePhoto.querySelector(".popup__photo-name");
@@ -32,6 +38,7 @@ const closePopupButtonSizePhoto = popupSizePhoto.querySelector(
   ".popup__button-close"
 );
 
+// Массив изображений
 const initialCards = [
   {
     name: "Архыз",
@@ -59,31 +66,37 @@ const initialCards = [
   },
 ];
 
+//Функция создания новой карточки с изображением
 function createCardPhoto(text, image) {
   const card = new Card(text, image, ".template");
   const cardElement = card.renderCard();
   return cardElement;
 }
 
+// Вставление карточек в начало
 const addCardPhoto = (card) => {
   elements.prepend(card);
 };
 
+//Создание новой карточки
 initialCards.forEach((item) => {
   const card = createCardPhoto(item.name, item.link);
   addCardPhoto(card);
 });
 
+//Функция открытия попапов
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closeEsc);
 }
 
+//Функция закрытия попапов
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closeEsc);
 }
 
+//Закрытие попапов по оверлею
 popups.forEach((popup) => {
   popup.addEventListener("mousedown", (evt) => {
     if (evt.target.classList.contains("popup_opened")) {
@@ -95,6 +108,7 @@ popups.forEach((popup) => {
   });
 });
 
+//Функция закрытия попапов по Esc
 function closeEsc(evt) {
   if (evt.key === "Escape") {
     const popupOpen = document.querySelector(".popup_opened");
@@ -102,18 +116,21 @@ function closeEsc(evt) {
   }
 }
 
+//Открытие и заполнение попапа профиля
 openPopupButtonProfile.addEventListener("click", function () {
-  openPopup(popupProfile);
   nameInput.value = nameInputProfile.textContent;
   subnameInput.value = subnameInputProfile.textContent;
+  openPopup(popupProfile);
 });
 
+//Открытие и заполнение попапа новой карточки
 openPopupButtonCadrAdd.addEventListener("click", function () {
   formPopupCardPhoto.reset();
   addCardValidator.toggleButtonState();
   openPopup(popupCardPhoto);
 });
 
+//Передача формы в профиле
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   nameInputProfile.textContent = nameInput.value;
@@ -123,6 +140,7 @@ function handleProfileFormSubmit(evt) {
 
 popupFormProfile.addEventListener("submit", handleProfileFormSubmit);
 
+//Передача формы для новой карточки
 function handleCardPhotoFormSubmit(evt) {
   evt.preventDefault();
   const card = createCardPhoto(
@@ -135,6 +153,8 @@ function handleCardPhotoFormSubmit(evt) {
 
 formPopupCardPhoto.addEventListener("submit", handleCardPhotoFormSubmit);
 
+
+//Валидация
 const validationConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
