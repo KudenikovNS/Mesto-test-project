@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./pages/index.css"/>
+    <title>Место</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Четвертый проект на Яндекс.Практикуме" />
+    <meta name="author" content="Никита Кудеников" />
+  </head>
+  <body class="page">
+    <div class="page__container">
+      <header class="header">
+        <img
+          class="header__logo hover"
+          src="./images/header_logo.svg"
+          alt="Логотип"
+        />
+      </header>
+
+      <main class="content">
+        <div class="profile">
+          <img
+            class="profile__avatar"
+            src="./images/avatar.jpg"
+            alt="Аватарка"
+          />
+          <div class="profile__list">
+            <div class="profile__info">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <p class="profile__subtitle">Исследователь океана</p>
+            </div>
+            <button
+              class="profile__button-edit hover"
+              type="button"
+              aria-label="Кнопка для редоктирования информации в профиле"
+            ></button>
+          </div>
+          <button
+            class="profile__button-add hover"
+            type="button"
+            aria-label="Кнопка для добавления контента"
+          ></button>
+        </div>
+        <section class="photo-grid"></section>
+      </main>
+    </div>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2021. Кудеников Никита</p>
+    </footer>
+
+    <!-- Блок для картинок -->
+    <template class="template" id="template">
+      <article class="element">
+        <button
+          class="element__button-delete hover"
+          type="button"
+          aria-label="Кнопка для удаления контента"
+        ></button>
+        <img class="element__photo" src="#" alt="#" />
+        <div class="element__info">
+          <p class="element__subtitle"></p>
+          <button
+            class="element__button-like hover"
+            type="button"
+            aria-label="Кнопка для лайка"
+          ></button>
+        </div>
+      </article>
+    </template>
+
+    <!-- Popup - открытие редактирования профиля -->
+    <section class="popup popup_profile">
+      <div class="popup__container">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form
+          class="popup__form popup__form-profile"
+          action="#"
+          name="form"
+          novalidate
+        >
+          <fieldset class="popup__input-container">
+            <input
+              class="popup__input popup__input-name popup__input-profile-name"
+              id="name-input"
+              type="text"
+              placeholder="ФИО"
+              name="name"
+              value="Жак-Ив Кусто"
+              required
+              minlength="2"
+              maxlength="40"
+            />
+            <span class="popup__error-input name-input-error"></span>
+            <input
+              class="popup__input popup__input-profession popup__input-profile-subname"
+              id="subname-input"
+              type="text"
+              placeholder="Профессия"
+              name="profession"
+              value="Исследователь океана"
+              required
+              minlength="2"
+              maxlength="200"
+            />
+            <span class="popup__error-input subname-input-error"></span>
+          </fieldset>
+          <button
+            class="popup__button-save hover"
+            type="submit"
+            aria-label="Кнопка для сохранения изменений"
+          >
+            Сохранить
+          </button>
+          <button
+            class="popup__button-close hover"
+            type="button"
+            aria-label="Кнопка для закрытия диалогового окна"
+          ></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Popup для создания карточки с фотографией-->
+    <section class="popup popup_card-photo">
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" action="#" name="form-card" novalidate>
+          <fieldset class="popup__input-container">
+            <input
+              class="popup__input popup__input-name popup__input-card-name"
+              id="card-name-input"
+              type="text"
+              placeholder="Название"
+              name="cardPhoto-name"
+              value=""
+              required
+              minlength="2"
+              maxlength="30"
+            />
+            <span class="popup__error-input card-name-input-error popup__input-card-subname"></span>
+            <input
+              class="popup__input popup__input-profession"
+              id="card-subname-input"
+              type="url"
+              placeholder="Ссылка на картинку"
+              name="cardPhoto-link"
+              value=""
+              required
+              src=""
+            />
+            <span class="popup__error-input card-subname-input-error"></span>
+          </fieldset>
+          <button
+            class="popup__button-save popup__button-save_disabled hover"
+            type="submit"
+            aria-label="Кнопка для создания изменений"
+          >
+            Создать
+          </button>
+          <button
+            class="popup__button-close hover"
+            type="button"
+            aria-label="Кнопка для закрытия диалогового окна"
+          ></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Popup для увеличения фотографий при нажатии-->
+    <section class="popup popup_size-photo">
+      <div class="popup__container-size">
+        <img class="popup__photo" src="#" alt="Картинка" />
+        <p class="popup__photo-name"></p>
+        <button
+          class="popup__button-close hover"
+          type="button"
+          aria-label="Кнопка для закрытия диалогового окна"
+        ></button>
+      </div>
+    </section>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
