@@ -1,3 +1,5 @@
+import "./pages/index.css";
+
 import {
   inputProfileName,
   inputProfileSubname,
@@ -27,7 +29,7 @@ formValidatorInfo.setEventListeners();
 
 const popupWithFormEditProfile = new PopupWithForm(popupProfile, {
   submitFormHandler: (inputValues) => {
-    userInfo.setUserInfo(inputValues.name, inputValues.subname);
+    userInfo.setUserInfo(inputValues.name, inputValues.profession);
   },
 });
 
