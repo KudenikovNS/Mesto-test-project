@@ -3,7 +3,7 @@ export const inputProfileSubname = document.querySelector(".popup__input-profile
 export const imageSizePhoto = document.querySelector(".popup__photo");
 
 export const buttonOpenPopupEditProfile = document.querySelector(".profile__button-edit");
-export const buttonSaveInfoPopupProfile = document.querySelector(".profile__button-add");
+export const buttonAddPopupProfile = document.querySelector(".profile__button-add");
 
 export const cardsContainer = document.querySelector(".photo-grid");
 
@@ -11,8 +11,8 @@ export const popupProfile = document.querySelector(".popup_profile");
 export const popupCardPhoto = document.querySelector(".popup_card-photo");
 export const popupSizePhoto = document.querySelector(".popup_size-photo");
 
-export const userNameProfile = document.querySelector(".profile__title");
-export const userSubnameProfile = document.querySelector(".profile__subtitle");
+export const userNameProfile = ".profile__title";
+export const userSubnameProfile = ".profile__subtitle";
 
 export const initialCards = [
   {
@@ -42,12 +42,12 @@ export const initialCards = [
 ];
 
 export const setups = {
-  template:".template",
-  element:".element",
-  deleteButton:".element__button-delete",
-  image:".element__photo",
-  subtitle:".element__subtitle",
-  likeButton:".element__button-like",
+  templateCard:".template",
+  elementCard:".element",
+  deleteButtonCard:".element__button-delete",
+  imagePhoto:".element__photo",
+  subtitlePhoto:".element__subtitle",
+  likeButtonCard:".element__button-like",
 };
 
 export const validationConfig = {

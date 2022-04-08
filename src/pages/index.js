@@ -1,10 +1,10 @@
-import "./pages/index.css";
+import "./index.css";
 
 import {
   inputProfileName,
   inputProfileSubname,
   buttonOpenPopupEditProfile,
-  buttonSaveInfoPopupProfile,
+  buttonAddPopupProfile,
   popupProfile,
   popupCardPhoto,
   popupSizePhoto,
@@ -12,15 +12,15 @@ import {
   userNameProfile,
   userSubnameProfile,
   initialCards,
-} from "./components/constants.js";
+} from "../uitls/constants.js";
 
-import { Section } from "./components/Section.js";
-import { PopupWithImage } from "./components/PopupWithImage.js";
-import { PopupWithForm } from "./components/PopupWithForm.js";
-import { UserInfo } from "./components/UserInfo.js";
-import { FormValidator } from "./components/FormValidator.js";
-import { Card } from "./components/card.js";
-import { validationConfig, setups } from "./components/constants.js";
+import { Section } from "../components/Section.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { UserInfo } from "../components/UserInfo.js";
+import { FormValidator } from "../components/FormValidator.js";
+import { Card } from "../components/card.js";
+import { validationConfig, setups } from "../uitls/constants.js";
 
 const formValidatorCard = new FormValidator(validationConfig, popupCardPhoto);
 const formValidatorInfo = new FormValidator(validationConfig, popupProfile);
@@ -35,10 +35,10 @@ const popupWithFormEditProfile = new PopupWithForm(popupProfile, {
 
 buttonOpenPopupEditProfile.addEventListener("click", () => {
   const { name, subname } = userInfo.getUserInfo();
-  popupWithFormEditProfile.open();
   inputProfileName.value = name;
   inputProfileSubname.value = subname;
   formValidatorInfo.resetValid();
+  popupWithFormEditProfile.open();
 });
 
 popupWithFormEditProfile.setEventListeners();
@@ -53,9 +53,9 @@ const popupWithFormAddCard = new PopupWithForm(popupCardPhoto, {
   },
 });
 
-buttonSaveInfoPopupProfile.addEventListener("click", () => {
-  popupWithFormAddCard.open();
+buttonAddPopupProfile.addEventListener("click", () => {
   formValidatorCard.resetValid();
+  popupWithFormAddCard.open();
 });
 
 popupWithFormAddCard.setEventListeners();

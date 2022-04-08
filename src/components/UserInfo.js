@@ -1,7 +1,7 @@
 export class UserInfo {
   constructor({ userNameProfile, userSubnameProfile }) {
-    this._name = userNameProfile;
-    this._subname = userSubnameProfile;
+    this._name = document.querySelector(userNameProfile);
+    this._subname = document.querySelector(userSubnameProfile);
   }
 
   getUserInfo() {
@@ -9,7 +9,7 @@ export class UserInfo {
       name: this._name.textContent,
       subname: this._subname.textContent,
     };
-  }
+  } 
 
   setUserInfo(name, subname) {
     this._name.textContent = name;

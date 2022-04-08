@@ -1,19 +1,16 @@
 .popup__error-input {
   color: red;
-  opacity: 0;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0em;
   min-height: 30px;
-  margin-left: 36px;
+  margin-left: 26px;
 }
 
-.popup__error-input:last-of-type {
-  min-height: 47px;
-}
-
-.popup__error-input:first-of-type {
-  margin-bottom: 10px;
+@media screen and (min-width: 768px) {
+  .popup__error-input {
+    margin-left: 36px;
+  }
 }
