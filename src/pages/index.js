@@ -27,7 +27,7 @@ const formValidatorInfo = new FormValidator(validationConfig, popupProfile);
 formValidatorCard.setEventListeners();
 formValidatorInfo.setEventListeners();
 
-const popupWithFormEditProfile = new PopupWithForm(popupProfile, {
+const popupWithFormEditProfile = new PopupWithForm(".popup_profile", {
   submitFormHandler: (inputValues) => {
     userInfo.setUserInfo(inputValues.name, inputValues.profession);
   },
@@ -43,7 +43,7 @@ buttonOpenPopupEditProfile.addEventListener("click", () => {
 
 popupWithFormEditProfile.setEventListeners();
 
-const popupWithFormAddCard = new PopupWithForm(popupCardPhoto, {
+const popupWithFormAddCard = new PopupWithForm(".popup_card-photo", {
   submitFormHandler: (inputValues) => {
     const item = addCard({
       name: inputValues.name,
@@ -60,7 +60,7 @@ buttonAddPopupProfile.addEventListener("click", () => {
 
 popupWithFormAddCard.setEventListeners();
 
-const popupWithImage = new PopupWithImage(popupSizePhoto);
+const popupWithImage = new PopupWithImage(".popup_size-photo");
 
 function sizePhoto(name, link) {
   popupWithImage.open(name, link);

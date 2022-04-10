@@ -42,12 +42,11 @@ export const initialCards = [
 ];
 
 export const setups = {
-  templateCard:".template",
-  elementCard:".element",
-  deleteButtonCard:".element__button-delete",
-  imagePhoto:".element__photo",
-  subtitlePhoto:".element__subtitle",
-  likeButtonCard:".element__button-like",
+  templateCardSelector:".template",
+  elementCardSelector:".element",
+  deleteButtonCardSelector:".element__button-delete",
+  imageCardSelector:".element__photo",
+  subtitleCardSelector:".element__subtitle",
 };
 
 export const validationConfig = {
@@ -55,6 +54,6 @@ export const validationConfig = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button-save",
   inactiveButtonClass: "popup__button-save_disabled",
-  inputErrorClass: "popup__error-input",
+  inputErrorClass: "popup__error-input_type",
   errorClass: "popup__input_active",
 }

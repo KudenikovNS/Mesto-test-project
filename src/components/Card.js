@@ -3,21 +3,21 @@ export class Card {
     this._name = data.name;
     this._link = data.link;
     this._setups = setups;
-    this._templateCard = setups.templateCard;
+    this._templateCardSelector = setups.templateCardSelector;
     this._cardItem = setups.elementCard;
     this._sizePhoto = sizePhoto;
   }
 
   _getTemplate() {
     const copyCard = document
-      .querySelector(this._templateCard)
+      .querySelector(this._templateCardSelector)
       .content.querySelector(".element")
       .cloneNode(true);
     return copyCard;
   }
 
-  _clickButtonLike(likeButtonCard) {
-    likeButtonCard.classList.toggle("element__button-like_activ");
+  _clickButtonLike() {
+    this._likeButtonCard.classList.toggle("element__button-like_activ");
   }
 
   _deleteCard = () => {
@@ -26,24 +26,32 @@ export class Card {
   };
 
   _setEventListeners() {
-    this._likeButtonCard.addEventListener("click", () => {
-      this._clickButtonLike(this._likeButtonCard);
-    });
-    this._deleteButtonCard.addEventListener("click", () => {
-      this._deleteCard(this._cardItem);
+    this._likeButtonCard.addEventListener("click", () =>
+      this._clickButtonLike()
+    );
+    this._deleteButtonCardSelector.addEventListener("click", () => {
+      this._deleteCard();
     });
     this._cardImage.addEventListener("click", () => {
       this._sizePhoto(this._name, this._link);
     });
-  } 
+  }
 
   addNewCard() {
     this._cardItem = this._getTemplate();
-    this._cardSubtitle = this._cardItem.querySelector(this._setups.subtitlePhoto);
-    this._cardImage = this._cardItem.querySelector(this._setups.imagePhoto);
-    this._likeButtonCard = this._cardItem.querySelector(this._setups.likeButtonCard);
-    this._deleteButtonCard = this._cardItem.querySelector(this._setups.deleteButtonCard);
-    this._cardSubtitle.textContent = this._name;
+    this._subtitleCardSelector = this._cardItem.querySelector(
+      this._setups.subtitleCardSelector
+    );
+    this._cardImage = this._cardItem.querySelector(
+      this._setups.imageCardSelector
+    );
+    this._likeButtonCard = this._cardItem.querySelector(
+      ".element__button-like"
+    );
+    this._deleteButtonCardSelector = this._cardItem.querySelector(
+      this._setups.deleteButtonCardSelector
+    );
+    this._subtitleCardSelector.textContent = this._name;
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._setEventListeners();
