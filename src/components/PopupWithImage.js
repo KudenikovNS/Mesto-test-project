@@ -3,9 +3,9 @@ import { Popup } from "./Popup.js";
 export class PopupWithImage extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
-    this._imageSizePhoto = this._popupSelector.querySelector(".popup__photo");
+    this._imageSizePhoto = this._popup.querySelector(".popup__photo");
     this._popupImageName =
-      this._popupSelector.querySelector(".popup__photo-name");
+      this._popup.querySelector(".popup__photo-name");
   }
 
   open(name, link) {
