@@ -1,5 +1,4 @@
 import { Popup } from "./Popup.js";
-
 export class PopupWithForm extends Popup {
   constructor(popupSelector, { submitFormHandler }) {
     super(popupSelector);
@@ -14,6 +13,10 @@ export class PopupWithForm extends Popup {
       inputValues[input.name] = input.value;
     });
     return inputValues;
+  }
+
+  changeSubmitHandler(newHandlerSubmit) {
+    this._submitFormHandler = newHandlerSubmit;
   }
 
   setEventListeners() {
