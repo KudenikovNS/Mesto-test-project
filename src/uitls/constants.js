@@ -13,6 +13,8 @@ export const openPopupAvatar = document.querySelector(".profile__change-avatar")
 export const buttonOpenPopupEditProfile = document.querySelector(".profile__button-edit");
 export const buttonAddPopupProfile = document.querySelector(".profile__button-add");
 
+export const popupDelete = document.querySelector(".popup_delete_card");
+
 
 export const validationConfig = {
   formSelector: ".popup__form",

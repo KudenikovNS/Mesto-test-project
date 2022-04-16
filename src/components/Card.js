@@ -71,9 +71,10 @@ export class Card {
 
   handleDeleteCard = () => {
     this._element.remove();
+    this._element = null;
   };
 
-  _setEventListenersInCard() {
+  _setEventListenersInCard() {  
     this._element
       .querySelector(".element__button-like")
       .addEventListener("click", () => {
